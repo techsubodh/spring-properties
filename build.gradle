@@ -1,0 +1,44 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.4.RELEASE'
+		dependencyManagementVersion = '1.0.3.RELEASE'
+
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath(
+				"org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+
+	dependencies {
+		classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+		classpath "io.spring.gradle:dependency-management-plugin:${dependencyManagementVersion}"
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath "io.spring.gradle:dependency-management-plugin:${dependencyManagementVersion}"
+	}
+}
+
+
+plugins {
+	id 'java'
+}
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'java'
+group = 'com.subu.spring.properties'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies{
+
+    compile ('org.springframework.boot:spring-boot-starter-thymeleaf')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
